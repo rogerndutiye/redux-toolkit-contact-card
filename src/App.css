@@ -1,3 +1,7 @@
+.group:hover .group-hover\:flex {
+  display: flex !important;
+}
+
 .App {
   text-align: center;
 }
