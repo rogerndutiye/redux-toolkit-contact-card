@@ -34,17 +34,12 @@ const NewContact: React.FC<NewContactProps> = ({ id }) => {
     resolver: yupResolver(schema),
   });
   console.log(id);
-  //const { id } = useParams<{ id: string }>();
   const history = useHistory();
   const dispatch = useAppDispatch();
 
   const contactData = useAppSelector((state) =>
     state.contact.contactList.find((contact) => contact.id === id)
   );
-
-  // if (contactData) {
-  //   setValue([{ name: contactData.name }, { phone: userData.phone }]);
-  // }
 
   setValue("name", contactData?.name || "");
   setValue("email", contactData?.email || "");
@@ -59,13 +54,7 @@ const NewContact: React.FC<NewContactProps> = ({ id }) => {
     }
     dispatch(addContact({ name, email, telephone, id: uuidv4() }));
     history.push("/");
-
-    //console.log("data", isDirty, isValid, data);
   };
-
-  // const [name, setName] = useState<string>(contact?.name || "");
-  // const [email, setEmail] = useState<string>(contact?.email || "");
-  // const [telephone, setTelephone] = useState<string>(contact?.telephone || "");
 
   const editContact = (name: string, email: string, telephone: string) => {
     dispatch(updateContact({ name, email, telephone, id }));
