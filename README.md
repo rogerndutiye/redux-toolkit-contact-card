@@ -1,4 +1,4 @@
-# Would You Rather
+# Redux toolkit contact card
 
 redux-toolkit-contact-card is a simple contact card crud app.
 
